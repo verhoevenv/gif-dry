@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"><title>Main</title>
+	</head>
+	<body>
+			<div id="main"></div>
+			<script src="main.js"></script>
+			<script>
+				var node = document.getElementById('main');
+				var app = Elm.Main.embed(node);
+				app.ports.playVideo.subscribe(function(elem_id) {
+					console.log("Gotta play the " + elem_id);
+					var vid = document.getElementById(elem_id);
+					vid.play();
+				});
+			</script>
+	</body>
+</html>
