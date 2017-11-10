@@ -1,5 +1,5 @@
 Infinite kitten GIFs, Don't-Repeat-Your-Loop version!
 
-Build with `elm-make .\src\Main.elm --output=main.js`
+Build with `buildscripts/build.sh`
 
 Some work still planned
