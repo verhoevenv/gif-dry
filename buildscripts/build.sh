@@ -1,3 +1,4 @@
+#!/bin/bash
 rm -rf target
 mkdir target
 elm-make src/Main.elm --output=target/main.js
