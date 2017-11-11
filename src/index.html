@@ -10,7 +10,6 @@
 				var node = document.getElementById('main');
 				var app = Elm.Main.embed(node);
 				app.ports.playVideo.subscribe(function(elem_id) {
-					console.log("Gotta play the " + elem_id);
 					var vid = document.getElementById(elem_id);
 					vid.play();
 				});

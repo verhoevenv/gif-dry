@@ -7,8 +7,6 @@ import Html.Events exposing (..)
 import Http
 import Json.Decode as Decode
 
-import Debug
-
 main =
   Html.program
     { init = init "kitten"
@@ -101,7 +99,6 @@ update msg model =
     ShowNextGif ->
       let 
         newBuff = step model.gifUrlBuffer
-        _ = Debug.log "newbuff" newBuff
       in
         ({model | gifUrlBuffer = newBuff }, Cmd.batch [playVideo ("video-" ++ toString newBuff.begin), getRandomGif model.topic])
 
