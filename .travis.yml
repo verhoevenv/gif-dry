@@ -1,8 +1,19 @@
 language: node_js
 node_js:
   - "6"
-before_script:
-  - cat /proc/cpuinfo
+cache:
+  directories:
+    - sysconfcpus
+install:
+  - |
+    if [ ! -d sysconfcpus/bin ];
+    then
+      git clone https://github.com/obmarg/libsysconfcpus.git; 
+      cd libsysconfcpus;
+      ./configure --prefix=$TRAVIS_BUILD_DIR/sysconfcpus;
+      make && make install;
+      cd ..;
+    fi
   - npm install -g elm
   - npm install -g elm-test
   - elm-package install -y
